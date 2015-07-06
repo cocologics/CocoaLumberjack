@@ -95,7 +95,7 @@ static DDASLLogger *sharedInstance;
         snprintf(readUIDString, sizeof(readUIDString), "%d", readUID);
 #endif
 
-        NSAssert(l < sizeof(readUIDString),
+        NSAssert((size_t)l < sizeof(readUIDString),
                  @"Formatted euid is too long.");
         NSAssert(aslLogLevel < (sizeof(level_strings) / sizeof(level_strings[0])),
                  @"Unhandled ASL log level.");
