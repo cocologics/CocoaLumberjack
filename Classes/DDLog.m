@@ -968,6 +968,20 @@ NSString * DDExtractFileNameWithoutExtension(const char *filePath, BOOL copy) {
     return self;
 }
 
+- (instancetype)init {
+    NSAssert(NO, @"Call the designated initializer");
+    return [self initWithMessage:nil
+                           level:DDLogLevelOff
+                            flag:DDLogFlagInfo
+                         context:0
+                            file:nil
+                        function:nil
+                            line:0
+                             tag:nil
+                         options:DDLogMessageCopyFile
+                       timestamp:nil];
+}
+
 - (id)copyWithZone:(NSZone *)zone {
     DDLogMessage *newMessage = [DDLogMessage new];
     
